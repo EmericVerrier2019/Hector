@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Data.SQLite;
 
 namespace Hector
 {
@@ -25,7 +26,8 @@ namespace Hector
 
         private void BoutonEcrasement_Click(object sender, EventArgs e)
         {
-
+            String Version = "SELECT SQLITE_VERSION()";
+            System.Data.SQLite.SQLiteConnection Connection =   new SQLiteConnection();
         }
 
         private void BoutonImporter_Click(object sender, EventArgs e)
@@ -40,6 +42,11 @@ namespace Hector
                 TotalPath = ofd.FileName;
                 LabelNomDuFichier.Text = System.IO.Path.GetFileName(TotalPath); 
             }
+        }
+
+        private void BoutonAjout_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -81,6 +81,7 @@
             this.BoutonAjout.TabIndex = 4;
             this.BoutonAjout.Text = "Ajout";
             this.BoutonAjout.UseVisualStyleBackColor = true;
+            this.BoutonAjout.Click += new System.EventHandler(this.BoutonAjout_Click);
             // 
             // MenuImporter
             // 
