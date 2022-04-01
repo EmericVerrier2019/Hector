@@ -8,5 +8,6 @@ namespace Hector
 {
     internal class Article
     {
+        private int test;
     }
 }
