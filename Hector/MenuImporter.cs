@@ -27,7 +27,12 @@ namespace Hector
         private void BoutonEcrasement_Click(object sender, EventArgs e)
         {
             String Version = "SELECT SQLITE_VERSION()";
-            System.Data.SQLite.SQLiteConnection Connection =   new SQLiteConnection();
+            string cs = "Data Source=:memory:";
+            System.Data.SQLite.SQLiteConnection Connection =   new SQLiteConnection(cs);
+            Connection.Open();
+            var cmd = new SQLiteCommand(Version, Connection);
+            string versionResult = cmd.ExecuteScalar().ToString();
+            Console.WriteLine($"SQLITE version : {versionResult}");
         }
 
         private void BoutonImporter_Click(object sender, EventArgs e)
